@@ -2,10 +2,10 @@
 
 one:
   commenter: MyString
-  bidy: MyText
+  body: MyText
   post_id: 
 
 two:
   commenter: MyString
-  bidy: MyText
+  body: MyText
   post_id: 
