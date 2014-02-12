@@ -2,7 +2,11 @@ Blog::Application.routes.draw do
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :posts
+  
+# creates comments as a nested resource within posts. This is another part of capturing the hierarchical relationship that exists between posts and comments.
+  resources :posts do
+    resources :comments
+  end
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
