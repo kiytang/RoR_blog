@@ -1,38 +1,9 @@
 <h1>New Post</h1>
 <!-- to create a form, use the helper method form_for -->
 
-<%= form_for :post, url: posts_path do |f| %>
+<%= render 'form' %>
+
+<% link_to 'Back', posts_path %>
 	
-	<% if @post.errors.any? %>
-	<div id="error_explanation">
-	
-	<!-- >pluralize is a rails helper that takes a number and a string as its arguments. If the number is greater than one, the string will be automatically pluralized. -->
-		
-		<h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved;</h2>
-		
-		<ul>
-			<% @post.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
-	<% end %>
 
-
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title%>
-	</p>
-
-	<p>
-		<%= f.label :text %><br>
-		<%= f.text_area :text %>
-	</p>
-
-	<p>
-		<%= f.submit %>
-	</p>
-<% end %>
-
-<%= link_to 'Back', posts_path %>
 
